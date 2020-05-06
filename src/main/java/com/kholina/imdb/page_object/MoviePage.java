@@ -1,5 +1,6 @@
 package com.kholina.imdb.page_object;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,6 @@ public class MoviePage {
 
     public boolean verifyUserIsOnMoviePage(String movieName) {
         log.info("Verify user is on Sign In page");
-        return movieTitle.getText().contains(movieName);
+        return movieTitle.waitUntil(Condition.visible,7000).getText().contains(movieName);
     }
 }
