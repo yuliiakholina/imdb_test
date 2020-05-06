@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.kholina.imdb.constant.Constant.BASE_URL;
+import static com.kholina.imdb.constant.Constant.DEFAULT_WAIT_TIME;
 
 public class BaseTest {
     @BeforeEach
@@ -15,6 +16,7 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
         Configuration.holdBrowserOpen = false;
+        Configuration.timeout = DEFAULT_WAIT_TIME;
         Configuration.headless = true;
         Configuration.pageLoadStrategy = "eager";
         open(BASE_URL);

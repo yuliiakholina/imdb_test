@@ -22,7 +22,7 @@ class TopMoviesTest extends BaseTest {
     @Test
     void verifyClickingAddToWatchListRedirectsToSignIn() {
         topMoviesPage.clickAddToWatchListButton(getRandomMovieIndex());
-        assertTrue(signInPage.verifyUserIsOnSignInPage());
+        signInPage.verifyUserIsOnSignInPage();
     }
 
     @Test
